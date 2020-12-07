@@ -1,0 +1,5 @@
+Testcase/chromeTest
+#user/testApi
+#shop/test_shop_list
+#shop/test_my_shop
+#shop/test_new_shop
