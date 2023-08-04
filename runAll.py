@@ -1,11 +1,11 @@
 import os
-import Common.HTMLTestRunner as HTMLTestRunner
+import common.HTMLTestRunner as HTMLTestRunner
 import unittest
-import Common.getPathInfo
-import Common.readConfig
-from Common.log import MyLog
-import Common.log
-from Common.configEmail import sendReport
+import common.getPathInfo
+import common.readConfig
+from common.log import MyLog
+import common.log
+from common.configEmail import sendReport
 import time
 # path = getpathInfo.MakePath().get_Path()
 # on_off = readConfig.ReadConfig().get_email('on_off')
@@ -19,7 +19,7 @@ class AllTest:#定义一个类AllTest
         #resultPath = os.path.join(report_path, "report.html")#result/report.html
         # resultPath = getpathInfo.MakePath().get_resultpath('result')
         resultPath = os.path.join('../result', nowTime + '.html')
-        self.caseListFile = '../TestFile/caselist.txt'#配置执行哪些测试文件的配置文件路径
+        self.caseListFile = '../testfile/caselist.txt'#配置执行哪些测试文件的配置文件路径
         self.caseFile = "../testCase"#真正的测试断言文件路径
         self.caseList = []
         log.info('resultPath'+resultPath)#将resultPath的值输入到日志，方便定位查看问题

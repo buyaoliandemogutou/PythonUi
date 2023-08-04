@@ -4,9 +4,9 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from Base.setDriver import setDriver
-from Common import log
-from Base.findElement import WebTools
+from base.setDriver import setDriver
+from common import log
+from base.find_element import WebTools
 
 log = log.Logger().get_logger()
 
@@ -19,7 +19,8 @@ class aitool():
         driver = webdriver.Chrome()
         driver.maximize_window()
         driver.get(url)
-        time.sleep(4)
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
+            (By.XPATH, '//*[@id="app"]/div/div[2]/div[2]/form/div[1]/div/div/input')))
         try:
             # user = WebTools().Get_text('class_name')
             # user = user.text
@@ -34,7 +35,18 @@ class aitool():
             # WebTools().Element('xpath', '//*[@id="app"]/div/div[2]/div[2]/form/div[1]/div/div/input').sendkey('admin')
             driver.find_element(By.XPATH, '//*[@id="app"]/div/div[2]/div[2]/form/div[1]/div/div/input').send_keys(
                 'admin')
-            WebTools().Input('xpath', '//*[@id="app"]/div/div[2]/div[2]/form/div[2]/div/div/input', '123')
+            element = driver.find_element(By.XPATH, '//*[@id="app"]/div/div[2]/div[2]/form/div[2]/div/div/input')
+            WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
+                (By.XPATH, '//*[@id="app"]/div/div[2]/div[2]/form/div[2]/div/div/input')))
+            element.send_keys('123')
+            WebDriverWait(driver, 5).until(EC.visibility_of_element_located(
+                (By.XPATH, '//*[@id="app"]/div/div[2]/div[2]/form/div[4]/div/div/label/span[1]/span')))
+            driver.find_element(By.XPATH,
+                                '//*[@id="app"]/div/div[2]/div[2]/form/div[4]/div/div/label/span[1]/span').click()
+            WebDriverWait(driver, 10).until(EC.visibility_of_element_located(
+                (By.XPATH, '//*[@id="app"]/div/div[2]/div[2]/form/div[3]/div/button')))
+            driver.find_element(By.XPATH,
+                                '//*[@id="app"]/div/div[2]/div[2]/form/div[3]/div/button').click()
         except Exception as e:
             print(e)
 

@@ -1,7 +1,7 @@
 import time
 
 from selenium import webdriver
-from Common.log import MyLog
+from common.log import MyLog
 logger = MyLog().get_log().get_logger()
 class test:
     def setDriver(self):

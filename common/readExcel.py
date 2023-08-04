@@ -65,9 +65,9 @@ class readExcel():
 
 
 if __name__ == '__main__':  # 我们执行该文件测试一下是否可以正确获取Excel中的值
-    test_data = readExcel().excel_data_list(r'../TestFile/testcase.xlsx', 'test1')
+    test_data = readExcel().excel_data_list(r'../testfile/testcase.xlsx', 'test1')
     print('第一种方法：', test_data)
-    test_data1 = readExcel().get_xls(r'../TestFile/testcase.xlsx', 'test1')
+    test_data1 = readExcel().get_xls(r'../testfile/testcase.xlsx', 'test1')
     print(test_data1)
     # cls=readExcel().get_xls('userCase.xlsx', 'login')
     # print(readExcel().get_xls('userCase.xlsx', 'login'))

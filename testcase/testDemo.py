@@ -1,12 +1,12 @@
 import requests
 import unittest
-import Common.HTMLTestRunner1 as HTMLTestRunner
+import common.HTMLTestRunner1 as HTMLTestRunner
 import os
 import time
-from Common.log import MyLog
+from common.log import MyLog
 
 nowTime = time.strftime("%Y-%m-%d", time.localtime())
-path = os.path.join('../Result', nowTime+'.html')
+path = os.path.join('../result', nowTime+'.html')
 logger = MyLog().get_log().get_logger()
 class unitDemo(unittest.TestCase):
     def tearDown(self):
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     # runner = unittest.TestRunner()
     print('测试地址：'+path)
     try:
-        fp = open('../Result/1.html', 'wb')
+        fp = open('../result/1.html', 'wb')
         runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='web测试报告', tester='ZhaoJun')
         runner.run(suite)
     except Exception as e:

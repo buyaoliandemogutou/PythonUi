@@ -1,5 +1,5 @@
 from selenium import webdriver
-from Common.log import MyLog
+from common.log import MyLog
 
 log = MyLog().get_log()
 logger = log.get_logger()
@@ -29,7 +29,7 @@ def setDriver(name, driverPath):
 
 if __name__ == "__main__":
     name = 'chrome'
-    path = '..\Driver\chromedriver.exe'
+    path = '..\driver\chromedriver.exe'
     driver = setDriver(name, path)
     driver.get('https://cs.whdtool.com/web//manager/#/login')
     driver.maximize_window()

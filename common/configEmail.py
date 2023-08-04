@@ -2,8 +2,8 @@ import smtplib
 from email.header import Header
 from email.mime.text import MIMEText
 import time
-from Common.readConfig import ReadConfig
-from Common.log import MyLog
+from common.readConfig import ReadConfig
+from common.log import MyLog
 
 logger = MyLog().get_log().get_logger()
 class sendReport:
